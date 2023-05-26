@@ -9,6 +9,9 @@
     "build:prisma": "prisma generate",
     "test": "node bin"
   },
+  "stackblitzs": {
+    "startCommand": "npm run build && npm run test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samchon/prisma-bug-undefined-join-bug.git"
