@@ -1,0 +1,32 @@
+{
+  "name": "prisma-bug-undefined-join-bug",
+  "version": "0.1.0",
+  "description": "Prisma bug report that cannot distinguish undefined value",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:prisma && npm run build:compile",
+    "build:compile": "tsc",
+    "build:prisma": "prisma generate",
+    "test": "node bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samchon/prisma-bug-undefined-join-bug.git"
+  },
+  "author": "Jeongho Nam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samchon/prisma-bug-undefined-join-bug/issues"
+  },
+  "homepage": "https://github.com/samchon/prisma-bug-undefined-join-bug#readme",
+  "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "prisma": "^4.14.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.4",
+    "@types/uuid": "^9.0.1",
+    "typescript": "^5.0.4"
+  }
+}

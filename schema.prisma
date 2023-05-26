@@ -1,0 +1,39 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:./test.db"
+}
+
+model attachment_files {
+    id        String  @id /// @format uuid
+    name      String?
+    extension String?
+    url       String /// @format url
+
+    bbs_article_files bbs_article_files[]
+}
+
+model bbs_articles {
+    id         String   @id /// @format uuid
+    title      String
+    body       String
+    created_at DateTime
+
+    files bbs_article_files[]
+}
+
+model bbs_article_files {
+    id                 String @id
+    bbs_article_id     String /// @format uuid
+    attachment_file_id String /// @format uuid
+    sequence           Int /// @format int
+
+    article bbs_articles     @relation(fields: [bbs_article_id], references: [id])
+    file    attachment_files @relation(fields: [attachment_file_id], references: [id])
+
+    @@index([bbs_article_id])
+    @@index([attachment_file_id])
+}
